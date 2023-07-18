@@ -1,0 +1,124 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Interview Prep API",
+      "version": "1.0.0",
+      "description": "API for interview preparation data"
+    },
+    "basePath": "/",
+    "paths": {
+      "/api/data": {
+        "get": {
+          "tags": ["Data"],
+          "summary": "Fetch all data",
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Data"
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": ["Data"],
+          "summary": "Create a new data entry",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "description": "Data object to be created",
+              "schema": {
+                "$ref": "#/definitions/Data"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/Data"
+              }
+            }
+          }
+        }
+      },
+      "/api/data/{id}": {
+        "put": {
+          "tags": ["Data"],
+          "summary": "Update a data entry",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of the data entry to be updated",
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "description": "Updated data object",
+              "schema": {
+                "$ref": "#/definitions/Data"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/Data"
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Data"],
+          "summary": "Delete a data entry",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of the data entry to be deleted",
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/Data"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+  

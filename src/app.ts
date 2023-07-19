@@ -7,7 +7,7 @@ const app: Express = express();
 const PORT: number = 3000;
 
 // Replace 'YOUR_MONGODB_URI' with your actual MongoDB connection string
-const MONGODB_URI = 'mongodb+srv://user:pw@cluster0.4eiodjx.mongodb.net/interviewprep';
+const MONGODB_URI = 'mongodb+srv://myself:lolaso@cluster0.4eiodjx.mongodb.net/interviewprep';
 
 // Connect to MongoDB
 mongoose

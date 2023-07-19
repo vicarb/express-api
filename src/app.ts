@@ -4,7 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from './swagger.json';
 
 const app: Express = express();
-const PORT: number = 3000;
+const PORT: number = 8080;
 
 // Replace 'YOUR_MONGODB_URI' with your actual MongoDB connection string
 const MONGODB_URI = 'mongodb+srv://myself:lolaso@cluster0.4eiodjx.mongodb.net/interviewprep';

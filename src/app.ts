@@ -44,6 +44,21 @@ app.get('/api/data', async (req: Request, res: Response) => {
   }
 });
 
+app.get('/api/data/:id', async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const data = await DataModel.findById(id);
+
+    if (!data) {
+      return res.status(404).json({ message: 'Data not found' });
+    }
+
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching data by ID:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 // Create a new data entry in MongoDB (POST request)
 app.post('/api/data', async (req: Request, res: Response) => {
   try {

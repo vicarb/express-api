@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from './swagger.json';
 import dataRoutes from './routes/dataRoutes';
+import cors from 'cors'; 
 
 class DataServer {
   private app: express.Express;
@@ -33,6 +34,7 @@ class DataServer {
 
   private initializeMiddleware() {
     this.app.use(express.json());
+    this.app.use(cors());
   }
 
   private initializeRoutes() {

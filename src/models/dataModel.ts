@@ -5,6 +5,7 @@ const dataSchema = new mongoose.Schema({
   question: String,
   answer: String,
   category: String,
+  seniority: String
 });
 
 export const DataModel = mongoose.model('Data', dataSchema);

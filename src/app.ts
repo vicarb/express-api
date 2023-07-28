@@ -54,6 +54,6 @@ class DataServer {
 
 // Usage:
 const PORT = 8082;
-const MONGODB_URI = 'mongodb+srv://user:pw@cluster0.4eiodjx.mongodb.net/interviewprep';
+const MONGODB_URI = 'mongodb+srv://myself:lolaso@cluster0.4eiodjx.mongodb.net/interviewprep';
 const server = new DataServer(PORT, MONGODB_URI);
 server.start();
